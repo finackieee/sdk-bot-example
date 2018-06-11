@@ -14,7 +14,7 @@ An example bot built using the `@radarrelay/sdk`.
   Enter the address into a [Kovan Faucet](https://faucet.kovan.radarrelay.com) to obtain Kovan ETH.
 
 4. Once the ETH is received the bot will:
-  a. Set WETH token allowance
-  b. Wrap ETH
-  c. Subscribe to the ZRX/WETH book websocket
-  d. Place a ZRX/WETH limit order
+   1. Set WETH token allowance
+   2. Wrap ETH
+   3. Subscribe to the ZRX/WETH book websocket
+   4. Place a ZRX/WETH limit order
