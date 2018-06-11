@@ -36,6 +36,7 @@ const KOVAN_RPC = 'https://kovan.infura.io';
     websocketEndpoint: WS_ENDPOINT
   });
   
+  // Listen to loading progress
   rr.events.on('loading', data => {
     process.stdout.write('....');
     if (data.progress === 100) {
@@ -43,8 +44,7 @@ const KOVAN_RPC = 'https://kovan.infura.io';
     }
   });
   
-  // Init Wallet
-  // -----------
+  // Init wallet
   await rr.initialize({
       wallet: {
         password: WALLET_PASSWORD
@@ -92,7 +92,7 @@ const KOVAN_RPC = 'https://kovan.infura.io';
 
   // Setup Wallet
   // ------------------
-  console.log("\n\n"+'Setting Up Wallet:');
+  console.log("\n"+'Setting Up Wallet:');
   console.log('------------------');
   
   // Set WETH Allowance
@@ -120,13 +120,14 @@ const KOVAN_RPC = 'https://kovan.infura.io';
 
   // Setup book subscription
   // -----------------------
-  const subscription = zrxEthMarket.subscribe(WebsocketRequestTopic.BOOK, (mssg => {
-    if (mssg.action && mssg.action === 'NEW' 
-    && mssg.event.order.signedOrder.maker === rr.account.address) {
-      console.log('Order Placed! ' + colors.green(mssg.event.order.orderHash));
+  const subscription = await zrxEthMarket.subscribeAsync(WebsocketRequestTopic.BOOK, message => {
+    if (message.action && message.action === 'NEW' 
+    && message.event.order.signedOrder.maker === rr.account.address) {
+      console.log('Order Placed! ' + colors.green(message.event.order.orderHash));
+      console.log('Goodbye.');
       process.exit();
     }
-  }) as any);
+  });
 
   // Create ZRX Buy Order
   // ---------------------
@@ -137,5 +138,7 @@ const KOVAN_RPC = 'https://kovan.infura.io';
     new BigNumber(String(zrxEthRate)),
     new BigNumber((new Date().getTime() / 1000) + 43200).floor() // 12 hours
   );
+  
+  
   
 })();

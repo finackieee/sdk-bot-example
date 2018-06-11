@@ -153,9 +153,9 @@
     web3 "^0.20.0"
     web3-typescript-typings "^0.10.2"
 
-"@radarrelay/sdk@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@radarrelay/sdk/-/sdk-0.2.3.tgz#1f0b4f839e81251a480caa21bb525c877723db77"
+"@radarrelay/sdk@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@radarrelay/sdk/-/sdk-0.2.5.tgz#ebad20c1095caa3070f7c73cd86acc2565e349ad"
   dependencies:
     "0x.js" "^0.33.6"
     "@radarrelay/subproviders" "^0.5.3"
