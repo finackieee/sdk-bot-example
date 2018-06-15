@@ -1,4 +1,4 @@
-import {RadarRelay} from '@radarrelay/sdk';
+import {SdkManager, RadarRelay} from '@radarrelay/sdk';
 import {WebsocketRequestTopic, UserOrderType} from '@radarrelay/types';
 import colors = require('colors/safe');
 const request = require('request-promise');
@@ -31,9 +31,13 @@ const KOVAN_RPC = 'https://kovan.infura.io';
   
   // Setup SDK
   // ---------
-  const rr = new RadarRelay({
-    endpoint: API_ENDPOINT,
-    websocketEndpoint: WS_ENDPOINT
+  const rr = SdkManager.Setup({
+    wallet: {
+      password: WALLET_PASSWORD
+    },
+    dataRpcUrl: KOVAN_RPC,
+    radarRestEndpoint: API_ENDPOINT,
+    radarWebsocketEndpoint: WS_ENDPOINT
   });
   
   // Listen to loading progress
@@ -45,12 +49,7 @@ const KOVAN_RPC = 'https://kovan.infura.io';
   });
   
   // Init wallet
-  await rr.initialize({
-      wallet: {
-        password: WALLET_PASSWORD
-      },
-      dataRpcUrl: KOVAN_RPC
-  });
+  await SdkManager.InitializeAsync(rr);
   
   // Get token rates
   // ---------------
