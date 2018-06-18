@@ -1,4 +1,4 @@
-import {SdkManager, RadarRelay} from '@radarrelay/sdk';
+import {SdkManager, EventName} from '@radarrelay/sdk';
 import {WebsocketRequestTopic, UserOrderType} from '@radarrelay/types';
 import colors = require('colors/safe');
 const request = require('request-promise');
@@ -41,7 +41,7 @@ const KOVAN_RPC = 'https://kovan.infura.io';
   });
   
   // Listen to loading progress
-  rr.events.on('loading', data => {
+  rr.events.on(EventName.Loading, data => {
     process.stdout.write('....');
     if (data.progress === 100) {
       process.stdout.write('🚀');
