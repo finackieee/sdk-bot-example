@@ -1,10 +1,12 @@
 # SDK Bot Example
 
-An example bot built using the `@radarrelay/sdk`.
+This repository contains the Radar Relay Bot example used in the [Building a Bot](https://developers.radarrelay.com/bot-tutorial) tutorial.
+
+<img width="972" alt="bot_screenshot" src="https://user-images.githubusercontent.com/20102664/41553318-9f234f34-72ee-11e8-934a-041284e1d1e6.png">
 
 ## Setup
 
-1. `yarn install`
+1. `npm install`
 
 2. `export RADAR_WALLET_PASSWORD=yourpassword`
 
