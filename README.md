@@ -2,7 +2,7 @@
 
 This repository contains the Radar Relay Bot example used in the [Building a Bot](https://developers.radarrelay.com/bot-tutorial) tutorial.
 
-![bot_demo](https://user-images.githubusercontent.com/20102664/41552912-6d114cfe-72ed-11e8-9135-40c50614407c.png)
+<img width="972" alt="bot_screenshot" src="https://user-images.githubusercontent.com/20102664/41553318-9f234f34-72ee-11e8-934a-041284e1d1e6.png">
 
 ## Setup
 
