@@ -3,6 +3,12 @@
 This repository contains the Radar Relay Bot example used in the [Building a Bot](https://developers.radarrelay.com/bot-tutorial) tutorial.
 
 <img width="972" alt="bot_screenshot" src="https://user-images.githubusercontent.com/20102664/41553318-9f234f34-72ee-11e8-934a-041284e1d1e6.png">
+## Prerequisites
+Ubuntu 18.04.1
+```sudo apt-get install libusb-1.0-0-dev nodejs npm
+npm install node-hid --build-from-source --driver=libusb --save
+npm install libsecp256k1 --save
+```
 
 ## Setup
 
